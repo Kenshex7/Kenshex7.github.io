@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" placeholder="Correo Electrónico" id="login-name">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" placeholder="Contraseña" id="login-pass">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+				<a class="btn btn-primary btn-large btn-block" onclick="Login()">Iniciar Sesión</a>
+			</div>
+		</div>
+	</div>
+</body>
+  
+<script type="text/javascript">
+function Login(){
+	var	xmlhttp= new XMLHttpRequest();
+	xmlhttp.open("GET","Usuarios.xml");
+	xmlhttp.send();
+	xmlDoc=xmlhttp.responseXML;
+	var nodos=xmlDoc.getElementsByTagName("Usuario");
+	for (i = 0; i >= nodos.length; i++) {
+		alert(nodos[i].childNodes[1].nodeValue);
+	};
+}
+</script>
+</body>
+</html>
