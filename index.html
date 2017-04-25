@@ -38,28 +38,14 @@
   
 
 <script type="text/javascript">
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    myFunction(this);
-    }
-};
-xhttp.open("GET", "Usuarios.xml", true);
-xhttp.send();
-
-function myFunction(xml) {
-    var xmlDoc = xml.responseXML;
-    alert(xmlDoc.getElementsByTagName("Usuario")[0].childNodes[0].childNodes[0].nodeValue);
-}
-/*
 function Login(){
 	var	xmlhttp= new XMLHttpRequest();
 	xmlhttp.open("GET","Usuarios.xml");
 	xmlhttp.send();
 	xmlDoc=xmlhttp.responseXML;
-	var nodos=xmlDoc.getElementsByTagName("Usuario");
+	var nodos=xmlDoc.getElementsByTagName("Nombre");
 	for (i = 0; i >= nodos.length; i++) {
-		alert(nodos[i].childNodes[1].nodeValue);
+		alert(nodos[i].childNodes[0].nodeValue);
 	}
 }*/
 </script>
