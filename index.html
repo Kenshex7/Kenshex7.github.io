@@ -40,7 +40,7 @@
 <script type="text/javascript">
 function Login(){
 	var	xmlhttp= new XMLHttpRequest();
-	xmlhttp.open("GET","Usuarios.xml");
+	xmlhttp.open("GET","Usuarios.xml",true);
 	xmlhttp.send();
 	xmlDoc=xmlhttp.responseXML;
 	var nodos=xmlDoc.getElementsByTagName("Nombre");
