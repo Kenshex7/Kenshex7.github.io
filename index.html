@@ -38,10 +38,10 @@
   
 
 <script type="text/javascript">
-function Login(){
 	xmlhttp= new XMLHttpRequest();
 	xmlhttp.open("GET","Usuarios.xml",true);
 	xmlhttp.send();
+function Login(){
 	xmlDoc=xmlhttp.responseXML;
 	var nodos = xmlDoc.getElementsByTagName("Nombre");
 	for (i = 0; i < nodos.length; i++) {
