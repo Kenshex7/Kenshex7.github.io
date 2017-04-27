@@ -43,9 +43,10 @@
 	xmlhttp.send();
 function Login(){
 	xmlDoc=xmlhttp.responseXML;
-	var nodos = xmlDoc.getElementsByTagName("Nombre");
-	for (i = 0; i < nodos.length; i++) {
-		alert(nodos[i].childNodes[0].nodeValue);
+	var nombres = xmlDoc.getElementsByTagName("Nombre");
+	var contras = xmlDoc.getElementsByTagName("Contra");
+	for (i = 0; i < nombres.length; i++) {
+		alert(nombres[i].childNodes[0].nodeValue,contras[i].childNodes[0].nodeValue,;
 	}
 }
 </script>
