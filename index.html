@@ -43,8 +43,9 @@ function Login(){
 	xmlhttp.open("GET","Usuarios.xml",true);
 	xmlhttp.send();
 	xmlDoc=xmlhttp.responseXML;
-	for (i = 0; i >= nodos.length; i++) {
-		alert(xmlDoc.getElementsByTagName("Nombre")[0].childNodes[0].nodeValue);
+	var nodos=xmlDoc.getElementsByTagName("Nombre");
+	for (i = 0; i < nodos.length; i++) {
+		alert(nodos[0].childNodes[0].nodeValue);
 	}
 }
 </script>
