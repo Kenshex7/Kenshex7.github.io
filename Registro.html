@@ -74,7 +74,7 @@ function Registrarse()
 	else
 	{
 		xmlDoc=xml.responseXML;
-		var xuser, xnombres,xpaterno,xmaterno,xcorreo,xcontra, xmlDoc;
+		var xuser, xnombres,xpaterno,xmaterno,xcorreo,xcontra, xmlDoc, mostrar;
 		xuser=xmlDoc.createElement("Usuario");
     	xnombres = xmlDoc.createElement("Nombre");
     	xpaterno = xmlDoc.createElement("Paterno");
@@ -97,6 +97,26 @@ function Registrarse()
     	xuser.appendChild(xcorreo);
     	xuser.appendChild(xcontra);
     	xmlDoc.getElementsByTagName("Usuarios")[0].appendChild(xuser);
+    	mostrar= xmlDoc.getElementsByTagName("Nombre");
+    	for (i = 0; i < correos.length; i++) {
+    		alert(mostrar[i].childNodes[0].nodeValue);
+		}
+
+
+    	/*var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+        var fso = new ActiveXObject("Scripting.FileSystemObject");
+        var file = fso.CreateTextFile("Usuarios.xml", true);
+        file.WriteLine('<?xml version="1.0" encoding="utf-8"?>\n');
+        file.WriteLine('<Usuarios>\n');
+        for (var i = 0; i < xmlDoc.getElementsByTagName("Usuario"); i++) {
+        	
+        };
+        file.WriteLine('</Usuarios>\n');
+        file.Close();*/
+
+
+
+
 
 		alert("Bienvenido");
 
