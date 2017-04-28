@@ -38,16 +38,25 @@
   
 
 <script type="text/javascript">
+
 	xmlhttp= new XMLHttpRequest();
 	xmlhttp.open("GET","Usuarios.xml",true);
 	xmlhttp.send();
+
 function Login(){
+	var nombre=document.getElementById("login-name");
+	var contra=document.getElementById("login-pass");
+	var Logueado = 0;
 	xmlDoc=xmlhttp.responseXML;
 	var nombres = xmlDoc.getElementsByTagName("Nombre");
 	var contras = xmlDoc.getElementsByTagName("Contra");
 	for (i = 0; i < nombres.length; i++) {
-		alert(nombres[i].childNodes[0].nodeValue+" "+contras[i].childNodes[0].nodeValue);
+		if(nombres[i].childNodes[0].nodeValue==nombre && contras[i].childNodes[0].nodeValue==contra)
+		{
+			Logueado=1;
+		}
 	}
+	
 }
 </script>
 </body>
