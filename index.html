@@ -44,9 +44,9 @@
 	xmlhttp.send();
 
 function Login(){
-	var correo=document.getElementById("login-name");
+	var correo=document.getElementById("login-name").value;
 	console.log(correo);
-	var contra=document.getElementById("login-pass");
+	var contra=document.getElementById("login-pass").value;
 	console.log(contra);
 	var Logueado = 0;
 	xmlDoc=xmlhttp.responseXML;
