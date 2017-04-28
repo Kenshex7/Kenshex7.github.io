@@ -45,15 +45,15 @@
 
 function Login(){
 	var nombre=document.getElementById("login-name");
-	console.log(nombre);
+	console.log(correo);
 	var contra=document.getElementById("login-pass");
-	console.log(nombre);
+	console.log(contra);
 	var Logueado = 0;
 	xmlDoc=xmlhttp.responseXML;
-	var nombres = xmlDoc.getElementsByTagName("Nombre");
+	var correos = xmlDoc.getElementsByTagName("Correo");
 	var contras = xmlDoc.getElementsByTagName("Contra");
-	for (i = 0; i < nombres.length; i++) {
-		if(nombres[i].childNodes[0].nodeValue==nombre && contras[i].childNodes[0].nodeValue==contra)
+	for (i = 0; i < correos.length; i++) {
+		if(correos[i].childNodes[0].nodeValue==correo && contras[i].childNodes[0].nodeValue==contra)
 		{
 			Logueado=1;
 		}
