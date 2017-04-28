@@ -98,7 +98,7 @@ function Registrarse()
     	xuser.appendChild(xcontra);
     	xmlDoc.getElementsByTagName("Usuarios")[0].appendChild(xuser);
     	mostrar= xmlDoc.getElementsByTagName("Nombre");
-    	for (i = 0; i < correos.length; i++) {
+    	for (i = 0; i < mostrar.length; i++) {
     		alert(mostrar[i].childNodes[0].nodeValue);
 		}
 
