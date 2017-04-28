@@ -70,10 +70,29 @@ function Registrarse()
 	}
 	else
 	{
+		var xml= new XMLHttpRequest();
+		xml.open("GET","Usuarios.xml",true);
+		xml.send();
+		var xnombres,xpaterno,xmaterno,xcorreo,xcontra,nodo, xmlDoc;
+		xmlDoc = xml.responseXML;
+    	xnombres = xmlDoc.createElement("Nombre");
+    	xpaterno = xmlDoc.createElement("Paterno");
+    	xmaterno = xmlDoc.createElement("Materno");
+    	xcorreo = xmlDoc.createElement("Correo");
+    	xcontra = xmlDoc.createElement("Contra");
+    	txnombres = xmlDoc.createTextNode(nombres);
+    	txpaterno = xmlDoc.createTextNode(paterno);
+    	txmaterno = xmlDoc.createTextNode(materno);
+    	txcorreo = xmlDoc.createTextNode(correo);
+    	txcontra = xmlDoc.createTextNode(contra);
+    	nodo = xmlDoc.getElementsByTagName("Usuario")[0].appendChild(newElement);
+    	xmlDoc = xml.responseXML;
+
 		alert("Bienvenido");
+
 	}
 }
 </script>
-  
+
 </body>
 </html>
