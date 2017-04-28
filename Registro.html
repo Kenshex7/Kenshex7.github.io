@@ -73,8 +73,9 @@ function Registrarse()
 		var xml= new XMLHttpRequest();
 		xml.open("GET","Usuarios.xml",true);
 		xml.send();
-		var xnombres,xpaterno,xmaterno,xcorreo,xcontra,nodo, xmlDoc;
+		var xuser, xnombres,xpaterno,xmaterno,xcorreo,xcontra,nodo, xmlDoc;
 		xmlDoc = xml.responseXML;
+		xuser=xmlDoc.createElement("Usuario");
     	xnombres = xmlDoc.createElement("Nombre");
     	xpaterno = xmlDoc.createElement("Paterno");
     	xmaterno = xmlDoc.createElement("Materno");
@@ -85,8 +86,17 @@ function Registrarse()
     	txmaterno = xmlDoc.createTextNode(materno);
     	txcorreo = xmlDoc.createTextNode(correo);
     	txcontra = xmlDoc.createTextNode(contra);
-    	nodo = xmlDoc.getElementsByTagName("Usuario")[0].appendChild(newElement);
-    	xmlDoc = xml.responseXML;
+    	xnombres.appendChild(txnombres);
+    	xpaterno.appendChild(txpaterno);
+    	xmaterno.appendChild(txmaterno);
+    	xcorreo.appendChild(txcorreo);
+    	xcontra.appendChild(txcontra);
+    	xuser.appendChild(xnombres);
+    	xuser.appendChild(xpaterno);
+    	xuser.appendChild(xmaterno);
+    	xuser.appendChild(xcorreo);
+    	xuser.appendChild(xcontra);
+    	nodo = xmlDoc.getElementsByTagName("Usuarios")[0].appendChild(xuser);
 
 		alert("Bienvenido");
 
