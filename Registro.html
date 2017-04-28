@@ -46,12 +46,34 @@
 				</div>
 
 				<a class="btn btn-primary btn-large btn-block" href="#">Registrarse</a>
-				<a class="login-link" href="index.html">Ya tienes una cuenta? Inicia sesión aquí</a>
+				<a class="login-link" href="index.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
 			</div>
 		</div>
 	</div>
 </body>
-  
+<script type="text/javascript">
+function Registrarse()
+{
+	var nombres=document.getElementById("regname").value;
+	console.log(nombres);
+	var paterno=document.getElementById("regpat").value;
+	console.log(paterno);
+	var materno=document.getElementById("regmat").value;
+	console.log(materno);
+	var correo=document.getElementById("regcorreo").value;
+	console.log(correo);
+	var contra=document.getElementById("regpass").value;
+	console.log(contra);
+	if(nombres=="" || paterno=="" || materno=="" || correo=="" || contra=="" ||)
+	{
+		alert("Por favor rellene todos los campos");
+	}
+	else
+	{
+		alert("Bienvenido");
+	}
+}
+</script>
   
 </body>
 </html>
