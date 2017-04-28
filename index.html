@@ -30,7 +30,7 @@
 				<label class="login-field-icon fui-lock" for="login-pass"></label>
 				</div>
 
-				<a class="btn btn-primary btn-large btn-block" onclick="Login()">Iniciar Sesión</a>
+				<a class="btn btn-primary btn-large btn-block" onclick="return Login()">Iniciar Sesión</a>
 				<a class="login-link" href="Registro.html">¿Aun no tienes una cuenta? Registrate aquí</a>
 			</div>
 		</div>
@@ -63,7 +63,7 @@ function Login(){
 		alert("El usuario o la contraseña no coinciden");
 	}
 	else{
-		alert("A perro");
+		window.location.href = "http://www.google.com";
 	}
 }
 </script>
