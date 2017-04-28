@@ -52,6 +52,9 @@
 	</div>
 </body>
 <script type="text/javascript">
+	var xml= new XMLHttpRequest();
+		xml.open("GET","Usuarios.xml",true);
+		xml.send();
 function Registrarse()
 {
 	var nombres=document.getElementById("regname").value;
@@ -70,11 +73,8 @@ function Registrarse()
 	}
 	else
 	{
-		var xml= new XMLHttpRequest();
-		xml.open("GET","Usuarios.xml",true);
-		xml.send();
+		xmlDoc=xml.responseXML;
 		var xuser, xnombres,xpaterno,xmaterno,xcorreo,xcontra, xmlDoc;
-		xmlDoc = xml.responseXML;
 		xuser=xmlDoc.createElement("Usuario");
     	xnombres = xmlDoc.createElement("Nombre");
     	xpaterno = xmlDoc.createElement("Paterno");
