@@ -39,33 +39,6 @@
   
 
 <script type="text/javascript">
-
-	xmlhttp= new XMLHttpRequest();
-	xmlhttp.open("GET","Usuarios.xml",true);
-	xmlhttp.send();
-
-function Login(){
-	var correo=document.getElementById("login-name").value;
-	console.log(correo);
-	var contra=document.getElementById("login-pass").value;
-	console.log(contra);
-	var Logueado = 0;
-	xmlDoc=xmlhttp.responseXML;
-	var correos = xmlDoc.getElementsByTagName("Correo");
-	var contras = xmlDoc.getElementsByTagName("Contra");
-	for (i = 0; i < correos.length; i++) {
-		if(correos[i].childNodes[0].nodeValue==correo && contras[i].childNodes[0].nodeValue==contra)
-		{
-			Logueado=1;
-		}
-	}
-	if(Logueado==0){
-		alert("El usuario o la contraseña no coinciden");
-	}
-	else{
-		window.location.href = "http://www.google.com";
-	}
-}
 </script>
 </body>
 </html>
